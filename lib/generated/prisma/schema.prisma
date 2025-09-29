@@ -14,17 +14,29 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Plants {
-  id          String   @id @default(cuid())
-  name        String
-  description String?
-  category    String
-  stock       Int
-  price       Float
-  domain      String
-  stack       String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  userId      String
-  imageUrl    String?
+model SampleModel {
+  id            String   @id @default(uuid()) // UUID primary key
+  stringField   String // Regular string
+  intField      Int // Integer
+  floatField    Float // Float
+  decimalField  Decimal  @db.Decimal(10, 2) // PostgreSQL Decimal
+  booleanField  Boolean // Boolean
+  dateTimeField DateTime // Date/time
+  jsonField     Json // JSON
+  bytesField    Bytes // Binary data
+  enumField     Role // Enum
+  bigIntField   BigInt   @db.BigInt // PostgreSQL BigInt
+  textField     String   @db.Text // PostgreSQL TEXT
+  createdAt     DateTime @default(now()) // Auto timestamp
+  updatedAt     DateTime @updatedAt // Auto update
+  optionalField String? // Optional field
+  uniqueField   String   @unique // Unique constraint
+  defaultString String   @default("default value") // Default string
+  isDeleted     Boolean  @default(false) // Soft delete pattern
+}
+
+enum Role {
+  USER
+  ADMIN
+  GUEST
 }

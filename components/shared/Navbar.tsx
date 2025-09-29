@@ -7,7 +7,7 @@ import { UserButton } from "@stackframe/stack";
 import Image from "next/image";
 import logo from "@/app/favicon.ico";
 import { Button } from "../ui/button";
-import { ThemeToggle } from "./ThemeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 async function Navbar() {
   const user = await stackServerApp.getUser();
@@ -26,9 +26,21 @@ async function Navbar() {
           {/* Navbar Links */}
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/plants">
+              <Link href="/user">
                 <Sprout className="w-4 h-4" />
-                <span className=" sm:inline">Plants</span>
+                <span className=" sm:inline">user</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" className="flex items-center gap-2" asChild>
+              <Link href="/applicant">
+                <Sprout className="w-4 h-4" />
+                <span className=" sm:inline">Applicant</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" className="flex items-center gap-2" asChild>
+              <Link href="/admin">
+                <Sprout className="w-4 h-4" />
+                <span className=" sm:inline">Admin</span>
               </Link>
             </Button>
 

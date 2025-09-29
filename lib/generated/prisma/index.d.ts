@@ -14,10 +14,28 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Plants
+ * Model SampleModel
  * 
  */
-export type Plants = $Result.DefaultSelection<Prisma.$PlantsPayload>
+export type SampleModel = $Result.DefaultSelection<Prisma.$SampleModelPayload>
+
+/**
+ * Enums
+ */
+export namespace $Enums {
+  export const Role: {
+  USER: 'USER',
+  ADMIN: 'ADMIN',
+  GUEST: 'GUEST'
+};
+
+export type Role = (typeof Role)[keyof typeof Role]
+
+}
+
+export type Role = $Enums.Role
+
+export const Role: typeof $Enums.Role
 
 /**
  * ##  Prisma Client ʲˢ
@@ -26,8 +44,8 @@ export type Plants = $Result.DefaultSelection<Prisma.$PlantsPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Plants
- * const plants = await prisma.plants.findMany()
+ * // Fetch zero or more SampleModels
+ * const sampleModels = await prisma.sampleModel.findMany()
  * ```
  *
  *
@@ -47,8 +65,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Plants
-   * const plants = await prisma.plants.findMany()
+   * // Fetch zero or more SampleModels
+   * const sampleModels = await prisma.sampleModel.findMany()
    * ```
    *
    *
@@ -145,14 +163,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.plants`: Exposes CRUD operations for the **Plants** model.
+   * `prisma.sampleModel`: Exposes CRUD operations for the **SampleModel** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Plants
-    * const plants = await prisma.plants.findMany()
+    * // Fetch zero or more SampleModels
+    * const sampleModels = await prisma.sampleModel.findMany()
     * ```
     */
-  get plants(): Prisma.PlantsDelegate<ExtArgs, ClientOptions>;
+  get sampleModel(): Prisma.SampleModelDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -593,7 +611,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Plants: 'Plants'
+    SampleModel: 'SampleModel'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -612,81 +630,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "plants"
+      modelProps: "sampleModel"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Plants: {
-        payload: Prisma.$PlantsPayload<ExtArgs>
-        fields: Prisma.PlantsFieldRefs
+      SampleModel: {
+        payload: Prisma.$SampleModelPayload<ExtArgs>
+        fields: Prisma.SampleModelFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PlantsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload> | null
+            args: Prisma.SampleModelFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PlantsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>
+            args: Prisma.SampleModelFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>
           }
           findFirst: {
-            args: Prisma.PlantsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload> | null
+            args: Prisma.SampleModelFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PlantsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>
+            args: Prisma.SampleModelFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>
           }
           findMany: {
-            args: Prisma.PlantsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>[]
+            args: Prisma.SampleModelFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>[]
           }
           create: {
-            args: Prisma.PlantsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>
+            args: Prisma.SampleModelCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>
           }
           createMany: {
-            args: Prisma.PlantsCreateManyArgs<ExtArgs>
+            args: Prisma.SampleModelCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.PlantsCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>[]
+            args: Prisma.SampleModelCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>[]
           }
           delete: {
-            args: Prisma.PlantsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>
+            args: Prisma.SampleModelDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>
           }
           update: {
-            args: Prisma.PlantsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>
+            args: Prisma.SampleModelUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>
           }
           deleteMany: {
-            args: Prisma.PlantsDeleteManyArgs<ExtArgs>
+            args: Prisma.SampleModelDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PlantsUpdateManyArgs<ExtArgs>
+            args: Prisma.SampleModelUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.PlantsUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>[]
+            args: Prisma.SampleModelUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>[]
           }
           upsert: {
-            args: Prisma.PlantsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PlantsPayload>
+            args: Prisma.SampleModelUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SampleModelPayload>
           }
           aggregate: {
-            args: Prisma.PlantsAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePlants>
+            args: Prisma.SampleModelAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSampleModel>
           }
           groupBy: {
-            args: Prisma.PlantsGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PlantsGroupByOutputType>[]
+            args: Prisma.SampleModelGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SampleModelGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PlantsCountArgs<ExtArgs>
-            result: $Utils.Optional<PlantsCountAggregateOutputType> | number
+            args: Prisma.SampleModelCountArgs<ExtArgs>
+            result: $Utils.Optional<SampleModelCountAggregateOutputType> | number
           }
         }
       }
@@ -782,7 +800,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    plants?: PlantsOmit
+    sampleModel?: SampleModelOmit
   }
 
   /* Types for Logging */
@@ -883,458 +901,534 @@ export namespace Prisma {
    */
 
   /**
-   * Model Plants
+   * Model SampleModel
    */
 
-  export type AggregatePlants = {
-    _count: PlantsCountAggregateOutputType | null
-    _avg: PlantsAvgAggregateOutputType | null
-    _sum: PlantsSumAggregateOutputType | null
-    _min: PlantsMinAggregateOutputType | null
-    _max: PlantsMaxAggregateOutputType | null
+  export type AggregateSampleModel = {
+    _count: SampleModelCountAggregateOutputType | null
+    _avg: SampleModelAvgAggregateOutputType | null
+    _sum: SampleModelSumAggregateOutputType | null
+    _min: SampleModelMinAggregateOutputType | null
+    _max: SampleModelMaxAggregateOutputType | null
   }
 
-  export type PlantsAvgAggregateOutputType = {
-    stock: number | null
-    price: number | null
+  export type SampleModelAvgAggregateOutputType = {
+    intField: number | null
+    floatField: number | null
+    decimalField: Decimal | null
+    bigIntField: number | null
   }
 
-  export type PlantsSumAggregateOutputType = {
-    stock: number | null
-    price: number | null
+  export type SampleModelSumAggregateOutputType = {
+    intField: number | null
+    floatField: number | null
+    decimalField: Decimal | null
+    bigIntField: bigint | null
   }
 
-  export type PlantsMinAggregateOutputType = {
+  export type SampleModelMinAggregateOutputType = {
     id: string | null
-    name: string | null
-    description: string | null
-    category: string | null
-    stock: number | null
-    price: number | null
-    domain: string | null
-    stack: string | null
+    stringField: string | null
+    intField: number | null
+    floatField: number | null
+    decimalField: Decimal | null
+    booleanField: boolean | null
+    dateTimeField: Date | null
+    bytesField: Uint8Array | null
+    enumField: $Enums.Role | null
+    bigIntField: bigint | null
+    textField: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    userId: string | null
-    imageUrl: string | null
+    optionalField: string | null
+    uniqueField: string | null
+    defaultString: string | null
+    isDeleted: boolean | null
   }
 
-  export type PlantsMaxAggregateOutputType = {
+  export type SampleModelMaxAggregateOutputType = {
     id: string | null
-    name: string | null
-    description: string | null
-    category: string | null
-    stock: number | null
-    price: number | null
-    domain: string | null
-    stack: string | null
+    stringField: string | null
+    intField: number | null
+    floatField: number | null
+    decimalField: Decimal | null
+    booleanField: boolean | null
+    dateTimeField: Date | null
+    bytesField: Uint8Array | null
+    enumField: $Enums.Role | null
+    bigIntField: bigint | null
+    textField: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    userId: string | null
-    imageUrl: string | null
+    optionalField: string | null
+    uniqueField: string | null
+    defaultString: string | null
+    isDeleted: boolean | null
   }
 
-  export type PlantsCountAggregateOutputType = {
+  export type SampleModelCountAggregateOutputType = {
     id: number
-    name: number
-    description: number
-    category: number
-    stock: number
-    price: number
-    domain: number
-    stack: number
+    stringField: number
+    intField: number
+    floatField: number
+    decimalField: number
+    booleanField: number
+    dateTimeField: number
+    jsonField: number
+    bytesField: number
+    enumField: number
+    bigIntField: number
+    textField: number
     createdAt: number
     updatedAt: number
-    userId: number
-    imageUrl: number
+    optionalField: number
+    uniqueField: number
+    defaultString: number
+    isDeleted: number
     _all: number
   }
 
 
-  export type PlantsAvgAggregateInputType = {
-    stock?: true
-    price?: true
+  export type SampleModelAvgAggregateInputType = {
+    intField?: true
+    floatField?: true
+    decimalField?: true
+    bigIntField?: true
   }
 
-  export type PlantsSumAggregateInputType = {
-    stock?: true
-    price?: true
+  export type SampleModelSumAggregateInputType = {
+    intField?: true
+    floatField?: true
+    decimalField?: true
+    bigIntField?: true
   }
 
-  export type PlantsMinAggregateInputType = {
+  export type SampleModelMinAggregateInputType = {
     id?: true
-    name?: true
-    description?: true
-    category?: true
-    stock?: true
-    price?: true
-    domain?: true
-    stack?: true
+    stringField?: true
+    intField?: true
+    floatField?: true
+    decimalField?: true
+    booleanField?: true
+    dateTimeField?: true
+    bytesField?: true
+    enumField?: true
+    bigIntField?: true
+    textField?: true
     createdAt?: true
     updatedAt?: true
-    userId?: true
-    imageUrl?: true
+    optionalField?: true
+    uniqueField?: true
+    defaultString?: true
+    isDeleted?: true
   }
 
-  export type PlantsMaxAggregateInputType = {
+  export type SampleModelMaxAggregateInputType = {
     id?: true
-    name?: true
-    description?: true
-    category?: true
-    stock?: true
-    price?: true
-    domain?: true
-    stack?: true
+    stringField?: true
+    intField?: true
+    floatField?: true
+    decimalField?: true
+    booleanField?: true
+    dateTimeField?: true
+    bytesField?: true
+    enumField?: true
+    bigIntField?: true
+    textField?: true
     createdAt?: true
     updatedAt?: true
-    userId?: true
-    imageUrl?: true
+    optionalField?: true
+    uniqueField?: true
+    defaultString?: true
+    isDeleted?: true
   }
 
-  export type PlantsCountAggregateInputType = {
+  export type SampleModelCountAggregateInputType = {
     id?: true
-    name?: true
-    description?: true
-    category?: true
-    stock?: true
-    price?: true
-    domain?: true
-    stack?: true
+    stringField?: true
+    intField?: true
+    floatField?: true
+    decimalField?: true
+    booleanField?: true
+    dateTimeField?: true
+    jsonField?: true
+    bytesField?: true
+    enumField?: true
+    bigIntField?: true
+    textField?: true
     createdAt?: true
     updatedAt?: true
-    userId?: true
-    imageUrl?: true
+    optionalField?: true
+    uniqueField?: true
+    defaultString?: true
+    isDeleted?: true
     _all?: true
   }
 
-  export type PlantsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Plants to aggregate.
+     * Filter which SampleModel to aggregate.
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Plants to fetch.
+     * Determine the order of SampleModels to fetch.
      */
-    orderBy?: PlantsOrderByWithRelationInput | PlantsOrderByWithRelationInput[]
+    orderBy?: SampleModelOrderByWithRelationInput | SampleModelOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PlantsWhereUniqueInput
+    cursor?: SampleModelWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Plants from the position of the cursor.
+     * Take `±n` SampleModels from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Plants.
+     * Skip the first `n` SampleModels.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Plants
+     * Count returned SampleModels
     **/
-    _count?: true | PlantsCountAggregateInputType
+    _count?: true | SampleModelCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: PlantsAvgAggregateInputType
+    _avg?: SampleModelAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: PlantsSumAggregateInputType
+    _sum?: SampleModelSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: PlantsMinAggregateInputType
+    _min?: SampleModelMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: PlantsMaxAggregateInputType
+    _max?: SampleModelMaxAggregateInputType
   }
 
-  export type GetPlantsAggregateType<T extends PlantsAggregateArgs> = {
-        [P in keyof T & keyof AggregatePlants]: P extends '_count' | 'count'
+  export type GetSampleModelAggregateType<T extends SampleModelAggregateArgs> = {
+        [P in keyof T & keyof AggregateSampleModel]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregatePlants[P]>
-      : GetScalarType<T[P], AggregatePlants[P]>
+        : GetScalarType<T[P], AggregateSampleModel[P]>
+      : GetScalarType<T[P], AggregateSampleModel[P]>
   }
 
 
 
 
-  export type PlantsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PlantsWhereInput
-    orderBy?: PlantsOrderByWithAggregationInput | PlantsOrderByWithAggregationInput[]
-    by: PlantsScalarFieldEnum[] | PlantsScalarFieldEnum
-    having?: PlantsScalarWhereWithAggregatesInput
+  export type SampleModelGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SampleModelWhereInput
+    orderBy?: SampleModelOrderByWithAggregationInput | SampleModelOrderByWithAggregationInput[]
+    by: SampleModelScalarFieldEnum[] | SampleModelScalarFieldEnum
+    having?: SampleModelScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: PlantsCountAggregateInputType | true
-    _avg?: PlantsAvgAggregateInputType
-    _sum?: PlantsSumAggregateInputType
-    _min?: PlantsMinAggregateInputType
-    _max?: PlantsMaxAggregateInputType
+    _count?: SampleModelCountAggregateInputType | true
+    _avg?: SampleModelAvgAggregateInputType
+    _sum?: SampleModelSumAggregateInputType
+    _min?: SampleModelMinAggregateInputType
+    _max?: SampleModelMaxAggregateInputType
   }
 
-  export type PlantsGroupByOutputType = {
+  export type SampleModelGroupByOutputType = {
     id: string
-    name: string
-    description: string | null
-    category: string
-    stock: number
-    price: number
-    domain: string
-    stack: string
+    stringField: string
+    intField: number
+    floatField: number
+    decimalField: Decimal
+    booleanField: boolean
+    dateTimeField: Date
+    jsonField: JsonValue
+    bytesField: Uint8Array
+    enumField: $Enums.Role
+    bigIntField: bigint
+    textField: string
     createdAt: Date
     updatedAt: Date
-    userId: string
-    imageUrl: string | null
-    _count: PlantsCountAggregateOutputType | null
-    _avg: PlantsAvgAggregateOutputType | null
-    _sum: PlantsSumAggregateOutputType | null
-    _min: PlantsMinAggregateOutputType | null
-    _max: PlantsMaxAggregateOutputType | null
+    optionalField: string | null
+    uniqueField: string
+    defaultString: string
+    isDeleted: boolean
+    _count: SampleModelCountAggregateOutputType | null
+    _avg: SampleModelAvgAggregateOutputType | null
+    _sum: SampleModelSumAggregateOutputType | null
+    _min: SampleModelMinAggregateOutputType | null
+    _max: SampleModelMaxAggregateOutputType | null
   }
 
-  type GetPlantsGroupByPayload<T extends PlantsGroupByArgs> = Prisma.PrismaPromise<
+  type GetSampleModelGroupByPayload<T extends SampleModelGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<PlantsGroupByOutputType, T['by']> &
+      PickEnumerable<SampleModelGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof PlantsGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof SampleModelGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], PlantsGroupByOutputType[P]>
-            : GetScalarType<T[P], PlantsGroupByOutputType[P]>
+              : GetScalarType<T[P], SampleModelGroupByOutputType[P]>
+            : GetScalarType<T[P], SampleModelGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type PlantsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type SampleModelSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
-    description?: boolean
-    category?: boolean
-    stock?: boolean
-    price?: boolean
-    domain?: boolean
-    stack?: boolean
+    stringField?: boolean
+    intField?: boolean
+    floatField?: boolean
+    decimalField?: boolean
+    booleanField?: boolean
+    dateTimeField?: boolean
+    jsonField?: boolean
+    bytesField?: boolean
+    enumField?: boolean
+    bigIntField?: boolean
+    textField?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
-    imageUrl?: boolean
-  }, ExtArgs["result"]["plants"]>
+    optionalField?: boolean
+    uniqueField?: boolean
+    defaultString?: boolean
+    isDeleted?: boolean
+  }, ExtArgs["result"]["sampleModel"]>
 
-  export type PlantsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type SampleModelSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
-    description?: boolean
-    category?: boolean
-    stock?: boolean
-    price?: boolean
-    domain?: boolean
-    stack?: boolean
+    stringField?: boolean
+    intField?: boolean
+    floatField?: boolean
+    decimalField?: boolean
+    booleanField?: boolean
+    dateTimeField?: boolean
+    jsonField?: boolean
+    bytesField?: boolean
+    enumField?: boolean
+    bigIntField?: boolean
+    textField?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
-    imageUrl?: boolean
-  }, ExtArgs["result"]["plants"]>
+    optionalField?: boolean
+    uniqueField?: boolean
+    defaultString?: boolean
+    isDeleted?: boolean
+  }, ExtArgs["result"]["sampleModel"]>
 
-  export type PlantsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type SampleModelSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
-    description?: boolean
-    category?: boolean
-    stock?: boolean
-    price?: boolean
-    domain?: boolean
-    stack?: boolean
+    stringField?: boolean
+    intField?: boolean
+    floatField?: boolean
+    decimalField?: boolean
+    booleanField?: boolean
+    dateTimeField?: boolean
+    jsonField?: boolean
+    bytesField?: boolean
+    enumField?: boolean
+    bigIntField?: boolean
+    textField?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
-    imageUrl?: boolean
-  }, ExtArgs["result"]["plants"]>
+    optionalField?: boolean
+    uniqueField?: boolean
+    defaultString?: boolean
+    isDeleted?: boolean
+  }, ExtArgs["result"]["sampleModel"]>
 
-  export type PlantsSelectScalar = {
+  export type SampleModelSelectScalar = {
     id?: boolean
-    name?: boolean
-    description?: boolean
-    category?: boolean
-    stock?: boolean
-    price?: boolean
-    domain?: boolean
-    stack?: boolean
+    stringField?: boolean
+    intField?: boolean
+    floatField?: boolean
+    decimalField?: boolean
+    booleanField?: boolean
+    dateTimeField?: boolean
+    jsonField?: boolean
+    bytesField?: boolean
+    enumField?: boolean
+    bigIntField?: boolean
+    textField?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
-    imageUrl?: boolean
+    optionalField?: boolean
+    uniqueField?: boolean
+    defaultString?: boolean
+    isDeleted?: boolean
   }
 
-  export type PlantsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "category" | "stock" | "price" | "domain" | "stack" | "createdAt" | "updatedAt" | "userId" | "imageUrl", ExtArgs["result"]["plants"]>
+  export type SampleModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "stringField" | "intField" | "floatField" | "decimalField" | "booleanField" | "dateTimeField" | "jsonField" | "bytesField" | "enumField" | "bigIntField" | "textField" | "createdAt" | "updatedAt" | "optionalField" | "uniqueField" | "defaultString" | "isDeleted", ExtArgs["result"]["sampleModel"]>
 
-  export type $PlantsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Plants"
+  export type $SampleModelPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "SampleModel"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      name: string
-      description: string | null
-      category: string
-      stock: number
-      price: number
-      domain: string
-      stack: string
+      stringField: string
+      intField: number
+      floatField: number
+      decimalField: Prisma.Decimal
+      booleanField: boolean
+      dateTimeField: Date
+      jsonField: Prisma.JsonValue
+      bytesField: Uint8Array
+      enumField: $Enums.Role
+      bigIntField: bigint
+      textField: string
       createdAt: Date
       updatedAt: Date
-      userId: string
-      imageUrl: string | null
-    }, ExtArgs["result"]["plants"]>
+      optionalField: string | null
+      uniqueField: string
+      defaultString: string
+      isDeleted: boolean
+    }, ExtArgs["result"]["sampleModel"]>
     composites: {}
   }
 
-  type PlantsGetPayload<S extends boolean | null | undefined | PlantsDefaultArgs> = $Result.GetResult<Prisma.$PlantsPayload, S>
+  type SampleModelGetPayload<S extends boolean | null | undefined | SampleModelDefaultArgs> = $Result.GetResult<Prisma.$SampleModelPayload, S>
 
-  type PlantsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PlantsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PlantsCountAggregateInputType | true
+  type SampleModelCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SampleModelFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SampleModelCountAggregateInputType | true
     }
 
-  export interface PlantsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Plants'], meta: { name: 'Plants' } }
+  export interface SampleModelDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SampleModel'], meta: { name: 'SampleModel' } }
     /**
-     * Find zero or one Plants that matches the filter.
-     * @param {PlantsFindUniqueArgs} args - Arguments to find a Plants
+     * Find zero or one SampleModel that matches the filter.
+     * @param {SampleModelFindUniqueArgs} args - Arguments to find a SampleModel
      * @example
-     * // Get one Plants
-     * const plants = await prisma.plants.findUnique({
+     * // Get one SampleModel
+     * const sampleModel = await prisma.sampleModel.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends PlantsFindUniqueArgs>(args: SelectSubset<T, PlantsFindUniqueArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends SampleModelFindUniqueArgs>(args: SelectSubset<T, SampleModelFindUniqueArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Plants that matches the filter or throw an error with `error.code='P2025'`
+     * Find one SampleModel that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {PlantsFindUniqueOrThrowArgs} args - Arguments to find a Plants
+     * @param {SampleModelFindUniqueOrThrowArgs} args - Arguments to find a SampleModel
      * @example
-     * // Get one Plants
-     * const plants = await prisma.plants.findUniqueOrThrow({
+     * // Get one SampleModel
+     * const sampleModel = await prisma.sampleModel.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PlantsFindUniqueOrThrowArgs>(args: SelectSubset<T, PlantsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends SampleModelFindUniqueOrThrowArgs>(args: SelectSubset<T, SampleModelFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Plants that matches the filter.
+     * Find the first SampleModel that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsFindFirstArgs} args - Arguments to find a Plants
+     * @param {SampleModelFindFirstArgs} args - Arguments to find a SampleModel
      * @example
-     * // Get one Plants
-     * const plants = await prisma.plants.findFirst({
+     * // Get one SampleModel
+     * const sampleModel = await prisma.sampleModel.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends PlantsFindFirstArgs>(args?: SelectSubset<T, PlantsFindFirstArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends SampleModelFindFirstArgs>(args?: SelectSubset<T, SampleModelFindFirstArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Plants that matches the filter or
+     * Find the first SampleModel that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsFindFirstOrThrowArgs} args - Arguments to find a Plants
+     * @param {SampleModelFindFirstOrThrowArgs} args - Arguments to find a SampleModel
      * @example
-     * // Get one Plants
-     * const plants = await prisma.plants.findFirstOrThrow({
+     * // Get one SampleModel
+     * const sampleModel = await prisma.sampleModel.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends PlantsFindFirstOrThrowArgs>(args?: SelectSubset<T, PlantsFindFirstOrThrowArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends SampleModelFindFirstOrThrowArgs>(args?: SelectSubset<T, SampleModelFindFirstOrThrowArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Plants that matches the filter.
+     * Find zero or more SampleModels that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {SampleModelFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Plants
-     * const plants = await prisma.plants.findMany()
+     * // Get all SampleModels
+     * const sampleModels = await prisma.sampleModel.findMany()
      * 
-     * // Get first 10 Plants
-     * const plants = await prisma.plants.findMany({ take: 10 })
+     * // Get first 10 SampleModels
+     * const sampleModels = await prisma.sampleModel.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const plantsWithIdOnly = await prisma.plants.findMany({ select: { id: true } })
+     * const sampleModelWithIdOnly = await prisma.sampleModel.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends PlantsFindManyArgs>(args?: SelectSubset<T, PlantsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends SampleModelFindManyArgs>(args?: SelectSubset<T, SampleModelFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Plants.
-     * @param {PlantsCreateArgs} args - Arguments to create a Plants.
+     * Create a SampleModel.
+     * @param {SampleModelCreateArgs} args - Arguments to create a SampleModel.
      * @example
-     * // Create one Plants
-     * const Plants = await prisma.plants.create({
+     * // Create one SampleModel
+     * const SampleModel = await prisma.sampleModel.create({
      *   data: {
-     *     // ... data to create a Plants
+     *     // ... data to create a SampleModel
      *   }
      * })
      * 
      */
-    create<T extends PlantsCreateArgs>(args: SelectSubset<T, PlantsCreateArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends SampleModelCreateArgs>(args: SelectSubset<T, SampleModelCreateArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Plants.
-     * @param {PlantsCreateManyArgs} args - Arguments to create many Plants.
+     * Create many SampleModels.
+     * @param {SampleModelCreateManyArgs} args - Arguments to create many SampleModels.
      * @example
-     * // Create many Plants
-     * const plants = await prisma.plants.createMany({
+     * // Create many SampleModels
+     * const sampleModel = await prisma.sampleModel.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends PlantsCreateManyArgs>(args?: SelectSubset<T, PlantsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends SampleModelCreateManyArgs>(args?: SelectSubset<T, SampleModelCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Plants and returns the data saved in the database.
-     * @param {PlantsCreateManyAndReturnArgs} args - Arguments to create many Plants.
+     * Create many SampleModels and returns the data saved in the database.
+     * @param {SampleModelCreateManyAndReturnArgs} args - Arguments to create many SampleModels.
      * @example
-     * // Create many Plants
-     * const plants = await prisma.plants.createManyAndReturn({
+     * // Create many SampleModels
+     * const sampleModel = await prisma.sampleModel.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Plants and only return the `id`
-     * const plantsWithIdOnly = await prisma.plants.createManyAndReturn({
+     * // Create many SampleModels and only return the `id`
+     * const sampleModelWithIdOnly = await prisma.sampleModel.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -1344,28 +1438,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends PlantsCreateManyAndReturnArgs>(args?: SelectSubset<T, PlantsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends SampleModelCreateManyAndReturnArgs>(args?: SelectSubset<T, SampleModelCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Plants.
-     * @param {PlantsDeleteArgs} args - Arguments to delete one Plants.
+     * Delete a SampleModel.
+     * @param {SampleModelDeleteArgs} args - Arguments to delete one SampleModel.
      * @example
-     * // Delete one Plants
-     * const Plants = await prisma.plants.delete({
+     * // Delete one SampleModel
+     * const SampleModel = await prisma.sampleModel.delete({
      *   where: {
-     *     // ... filter to delete one Plants
+     *     // ... filter to delete one SampleModel
      *   }
      * })
      * 
      */
-    delete<T extends PlantsDeleteArgs>(args: SelectSubset<T, PlantsDeleteArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends SampleModelDeleteArgs>(args: SelectSubset<T, SampleModelDeleteArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Plants.
-     * @param {PlantsUpdateArgs} args - Arguments to update one Plants.
+     * Update one SampleModel.
+     * @param {SampleModelUpdateArgs} args - Arguments to update one SampleModel.
      * @example
-     * // Update one Plants
-     * const plants = await prisma.plants.update({
+     * // Update one SampleModel
+     * const sampleModel = await prisma.sampleModel.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1375,30 +1469,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PlantsUpdateArgs>(args: SelectSubset<T, PlantsUpdateArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends SampleModelUpdateArgs>(args: SelectSubset<T, SampleModelUpdateArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Plants.
-     * @param {PlantsDeleteManyArgs} args - Arguments to filter Plants to delete.
+     * Delete zero or more SampleModels.
+     * @param {SampleModelDeleteManyArgs} args - Arguments to filter SampleModels to delete.
      * @example
-     * // Delete a few Plants
-     * const { count } = await prisma.plants.deleteMany({
+     * // Delete a few SampleModels
+     * const { count } = await prisma.sampleModel.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends PlantsDeleteManyArgs>(args?: SelectSubset<T, PlantsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends SampleModelDeleteManyArgs>(args?: SelectSubset<T, SampleModelDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Plants.
+     * Update zero or more SampleModels.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {SampleModelUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Plants
-     * const plants = await prisma.plants.updateMany({
+     * // Update many SampleModels
+     * const sampleModel = await prisma.sampleModel.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1408,14 +1502,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PlantsUpdateManyArgs>(args: SelectSubset<T, PlantsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends SampleModelUpdateManyArgs>(args: SelectSubset<T, SampleModelUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Plants and returns the data updated in the database.
-     * @param {PlantsUpdateManyAndReturnArgs} args - Arguments to update many Plants.
+     * Update zero or more SampleModels and returns the data updated in the database.
+     * @param {SampleModelUpdateManyAndReturnArgs} args - Arguments to update many SampleModels.
      * @example
-     * // Update many Plants
-     * const plants = await prisma.plants.updateManyAndReturn({
+     * // Update many SampleModels
+     * const sampleModel = await prisma.sampleModel.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1424,8 +1518,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Plants and only return the `id`
-     * const plantsWithIdOnly = await prisma.plants.updateManyAndReturn({
+     * // Update zero or more SampleModels and only return the `id`
+     * const sampleModelWithIdOnly = await prisma.sampleModel.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -1438,56 +1532,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends PlantsUpdateManyAndReturnArgs>(args: SelectSubset<T, PlantsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends SampleModelUpdateManyAndReturnArgs>(args: SelectSubset<T, SampleModelUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Plants.
-     * @param {PlantsUpsertArgs} args - Arguments to update or create a Plants.
+     * Create or update one SampleModel.
+     * @param {SampleModelUpsertArgs} args - Arguments to update or create a SampleModel.
      * @example
-     * // Update or create a Plants
-     * const plants = await prisma.plants.upsert({
+     * // Update or create a SampleModel
+     * const sampleModel = await prisma.sampleModel.upsert({
      *   create: {
-     *     // ... data to create a Plants
+     *     // ... data to create a SampleModel
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Plants we want to update
+     *     // ... the filter for the SampleModel we want to update
      *   }
      * })
      */
-    upsert<T extends PlantsUpsertArgs>(args: SelectSubset<T, PlantsUpsertArgs<ExtArgs>>): Prisma__PlantsClient<$Result.GetResult<Prisma.$PlantsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends SampleModelUpsertArgs>(args: SelectSubset<T, SampleModelUpsertArgs<ExtArgs>>): Prisma__SampleModelClient<$Result.GetResult<Prisma.$SampleModelPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Plants.
+     * Count the number of SampleModels.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsCountArgs} args - Arguments to filter Plants to count.
+     * @param {SampleModelCountArgs} args - Arguments to filter SampleModels to count.
      * @example
-     * // Count the number of Plants
-     * const count = await prisma.plants.count({
+     * // Count the number of SampleModels
+     * const count = await prisma.sampleModel.count({
      *   where: {
-     *     // ... the filter for the Plants we want to count
+     *     // ... the filter for the SampleModels we want to count
      *   }
      * })
     **/
-    count<T extends PlantsCountArgs>(
-      args?: Subset<T, PlantsCountArgs>,
+    count<T extends SampleModelCountArgs>(
+      args?: Subset<T, SampleModelCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], PlantsCountAggregateOutputType>
+          : GetScalarType<T['select'], SampleModelCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Plants.
+     * Allows you to perform aggregations operations on a SampleModel.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {SampleModelAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1507,13 +1601,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends PlantsAggregateArgs>(args: Subset<T, PlantsAggregateArgs>): Prisma.PrismaPromise<GetPlantsAggregateType<T>>
+    aggregate<T extends SampleModelAggregateArgs>(args: Subset<T, SampleModelAggregateArgs>): Prisma.PrismaPromise<GetSampleModelAggregateType<T>>
 
     /**
-     * Group by Plants.
+     * Group by SampleModel.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PlantsGroupByArgs} args - Group by arguments.
+     * @param {SampleModelGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1528,14 +1622,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PlantsGroupByArgs,
+      T extends SampleModelGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PlantsGroupByArgs['orderBy'] }
-        : { orderBy?: PlantsGroupByArgs['orderBy'] },
+        ? { orderBy: SampleModelGroupByArgs['orderBy'] }
+        : { orderBy?: SampleModelGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1584,20 +1678,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PlantsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlantsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, SampleModelGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSampleModelGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Plants model
+   * Fields of the SampleModel model
    */
-  readonly fields: PlantsFieldRefs;
+  readonly fields: SampleModelFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Plants.
+   * The delegate class that acts as a "Promise-like" for SampleModel.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PlantsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__SampleModelClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1625,384 +1719,390 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Plants model
+   * Fields of the SampleModel model
    */
-  interface PlantsFieldRefs {
-    readonly id: FieldRef<"Plants", 'String'>
-    readonly name: FieldRef<"Plants", 'String'>
-    readonly description: FieldRef<"Plants", 'String'>
-    readonly category: FieldRef<"Plants", 'String'>
-    readonly stock: FieldRef<"Plants", 'Int'>
-    readonly price: FieldRef<"Plants", 'Float'>
-    readonly domain: FieldRef<"Plants", 'String'>
-    readonly stack: FieldRef<"Plants", 'String'>
-    readonly createdAt: FieldRef<"Plants", 'DateTime'>
-    readonly updatedAt: FieldRef<"Plants", 'DateTime'>
-    readonly userId: FieldRef<"Plants", 'String'>
-    readonly imageUrl: FieldRef<"Plants", 'String'>
+  interface SampleModelFieldRefs {
+    readonly id: FieldRef<"SampleModel", 'String'>
+    readonly stringField: FieldRef<"SampleModel", 'String'>
+    readonly intField: FieldRef<"SampleModel", 'Int'>
+    readonly floatField: FieldRef<"SampleModel", 'Float'>
+    readonly decimalField: FieldRef<"SampleModel", 'Decimal'>
+    readonly booleanField: FieldRef<"SampleModel", 'Boolean'>
+    readonly dateTimeField: FieldRef<"SampleModel", 'DateTime'>
+    readonly jsonField: FieldRef<"SampleModel", 'Json'>
+    readonly bytesField: FieldRef<"SampleModel", 'Bytes'>
+    readonly enumField: FieldRef<"SampleModel", 'Role'>
+    readonly bigIntField: FieldRef<"SampleModel", 'BigInt'>
+    readonly textField: FieldRef<"SampleModel", 'String'>
+    readonly createdAt: FieldRef<"SampleModel", 'DateTime'>
+    readonly updatedAt: FieldRef<"SampleModel", 'DateTime'>
+    readonly optionalField: FieldRef<"SampleModel", 'String'>
+    readonly uniqueField: FieldRef<"SampleModel", 'String'>
+    readonly defaultString: FieldRef<"SampleModel", 'String'>
+    readonly isDeleted: FieldRef<"SampleModel", 'Boolean'>
   }
     
 
   // Custom InputTypes
   /**
-   * Plants findUnique
+   * SampleModel findUnique
    */
-  export type PlantsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * Filter, which Plants to fetch.
+     * Filter, which SampleModel to fetch.
      */
-    where: PlantsWhereUniqueInput
+    where: SampleModelWhereUniqueInput
   }
 
   /**
-   * Plants findUniqueOrThrow
+   * SampleModel findUniqueOrThrow
    */
-  export type PlantsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * Filter, which Plants to fetch.
+     * Filter, which SampleModel to fetch.
      */
-    where: PlantsWhereUniqueInput
+    where: SampleModelWhereUniqueInput
   }
 
   /**
-   * Plants findFirst
+   * SampleModel findFirst
    */
-  export type PlantsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * Filter, which Plants to fetch.
+     * Filter, which SampleModel to fetch.
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Plants to fetch.
+     * Determine the order of SampleModels to fetch.
      */
-    orderBy?: PlantsOrderByWithRelationInput | PlantsOrderByWithRelationInput[]
+    orderBy?: SampleModelOrderByWithRelationInput | SampleModelOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Plants.
+     * Sets the position for searching for SampleModels.
      */
-    cursor?: PlantsWhereUniqueInput
+    cursor?: SampleModelWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Plants from the position of the cursor.
+     * Take `±n` SampleModels from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Plants.
+     * Skip the first `n` SampleModels.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Plants.
+     * Filter by unique combinations of SampleModels.
      */
-    distinct?: PlantsScalarFieldEnum | PlantsScalarFieldEnum[]
+    distinct?: SampleModelScalarFieldEnum | SampleModelScalarFieldEnum[]
   }
 
   /**
-   * Plants findFirstOrThrow
+   * SampleModel findFirstOrThrow
    */
-  export type PlantsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * Filter, which Plants to fetch.
+     * Filter, which SampleModel to fetch.
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Plants to fetch.
+     * Determine the order of SampleModels to fetch.
      */
-    orderBy?: PlantsOrderByWithRelationInput | PlantsOrderByWithRelationInput[]
+    orderBy?: SampleModelOrderByWithRelationInput | SampleModelOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Plants.
+     * Sets the position for searching for SampleModels.
      */
-    cursor?: PlantsWhereUniqueInput
+    cursor?: SampleModelWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Plants from the position of the cursor.
+     * Take `±n` SampleModels from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Plants.
+     * Skip the first `n` SampleModels.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Plants.
+     * Filter by unique combinations of SampleModels.
      */
-    distinct?: PlantsScalarFieldEnum | PlantsScalarFieldEnum[]
+    distinct?: SampleModelScalarFieldEnum | SampleModelScalarFieldEnum[]
   }
 
   /**
-   * Plants findMany
+   * SampleModel findMany
    */
-  export type PlantsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * Filter, which Plants to fetch.
+     * Filter, which SampleModels to fetch.
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Plants to fetch.
+     * Determine the order of SampleModels to fetch.
      */
-    orderBy?: PlantsOrderByWithRelationInput | PlantsOrderByWithRelationInput[]
+    orderBy?: SampleModelOrderByWithRelationInput | SampleModelOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Plants.
+     * Sets the position for listing SampleModels.
      */
-    cursor?: PlantsWhereUniqueInput
+    cursor?: SampleModelWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Plants from the position of the cursor.
+     * Take `±n` SampleModels from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Plants.
+     * Skip the first `n` SampleModels.
      */
     skip?: number
-    distinct?: PlantsScalarFieldEnum | PlantsScalarFieldEnum[]
+    distinct?: SampleModelScalarFieldEnum | SampleModelScalarFieldEnum[]
   }
 
   /**
-   * Plants create
+   * SampleModel create
    */
-  export type PlantsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * The data needed to create a Plants.
+     * The data needed to create a SampleModel.
      */
-    data: XOR<PlantsCreateInput, PlantsUncheckedCreateInput>
+    data: XOR<SampleModelCreateInput, SampleModelUncheckedCreateInput>
   }
 
   /**
-   * Plants createMany
+   * SampleModel createMany
    */
-  export type PlantsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Plants.
+     * The data used to create many SampleModels.
      */
-    data: PlantsCreateManyInput | PlantsCreateManyInput[]
+    data: SampleModelCreateManyInput | SampleModelCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Plants createManyAndReturn
+   * SampleModel createManyAndReturn
    */
-  export type PlantsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelectCreateManyAndReturn<ExtArgs> | null
+    select?: SampleModelSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * The data used to create many Plants.
+     * The data used to create many SampleModels.
      */
-    data: PlantsCreateManyInput | PlantsCreateManyInput[]
+    data: SampleModelCreateManyInput | SampleModelCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Plants update
+   * SampleModel update
    */
-  export type PlantsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * The data needed to update a Plants.
+     * The data needed to update a SampleModel.
      */
-    data: XOR<PlantsUpdateInput, PlantsUncheckedUpdateInput>
+    data: XOR<SampleModelUpdateInput, SampleModelUncheckedUpdateInput>
     /**
-     * Choose, which Plants to update.
+     * Choose, which SampleModel to update.
      */
-    where: PlantsWhereUniqueInput
+    where: SampleModelWhereUniqueInput
   }
 
   /**
-   * Plants updateMany
+   * SampleModel updateMany
    */
-  export type PlantsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Plants.
+     * The data used to update SampleModels.
      */
-    data: XOR<PlantsUpdateManyMutationInput, PlantsUncheckedUpdateManyInput>
+    data: XOR<SampleModelUpdateManyMutationInput, SampleModelUncheckedUpdateManyInput>
     /**
-     * Filter which Plants to update
+     * Filter which SampleModels to update
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
-     * Limit how many Plants to update.
+     * Limit how many SampleModels to update.
      */
     limit?: number
   }
 
   /**
-   * Plants updateManyAndReturn
+   * SampleModel updateManyAndReturn
    */
-  export type PlantsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: SampleModelSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * The data used to update Plants.
+     * The data used to update SampleModels.
      */
-    data: XOR<PlantsUpdateManyMutationInput, PlantsUncheckedUpdateManyInput>
+    data: XOR<SampleModelUpdateManyMutationInput, SampleModelUncheckedUpdateManyInput>
     /**
-     * Filter which Plants to update
+     * Filter which SampleModels to update
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
-     * Limit how many Plants to update.
+     * Limit how many SampleModels to update.
      */
     limit?: number
   }
 
   /**
-   * Plants upsert
+   * SampleModel upsert
    */
-  export type PlantsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * The filter to search for the Plants to update in case it exists.
+     * The filter to search for the SampleModel to update in case it exists.
      */
-    where: PlantsWhereUniqueInput
+    where: SampleModelWhereUniqueInput
     /**
-     * In case the Plants found by the `where` argument doesn't exist, create a new Plants with this data.
+     * In case the SampleModel found by the `where` argument doesn't exist, create a new SampleModel with this data.
      */
-    create: XOR<PlantsCreateInput, PlantsUncheckedCreateInput>
+    create: XOR<SampleModelCreateInput, SampleModelUncheckedCreateInput>
     /**
-     * In case the Plants was found with the provided `where` argument, update it with this data.
+     * In case the SampleModel was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<PlantsUpdateInput, PlantsUncheckedUpdateInput>
+    update: XOR<SampleModelUpdateInput, SampleModelUncheckedUpdateInput>
   }
 
   /**
-   * Plants delete
+   * SampleModel delete
    */
-  export type PlantsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
     /**
-     * Filter which Plants to delete.
+     * Filter which SampleModel to delete.
      */
-    where: PlantsWhereUniqueInput
+    where: SampleModelWhereUniqueInput
   }
 
   /**
-   * Plants deleteMany
+   * SampleModel deleteMany
    */
-  export type PlantsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Plants to delete
+     * Filter which SampleModels to delete
      */
-    where?: PlantsWhereInput
+    where?: SampleModelWhereInput
     /**
-     * Limit how many Plants to delete.
+     * Limit how many SampleModels to delete.
      */
     limit?: number
   }
 
   /**
-   * Plants without action
+   * SampleModel without action
    */
-  export type PlantsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type SampleModelDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Plants
+     * Select specific fields to fetch from the SampleModel
      */
-    select?: PlantsSelect<ExtArgs> | null
+    select?: SampleModelSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Plants
+     * Omit specific fields from the SampleModel
      */
-    omit?: PlantsOmit<ExtArgs> | null
+    omit?: SampleModelOmit<ExtArgs> | null
   }
 
 
@@ -2020,22 +2120,28 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const PlantsScalarFieldEnum: {
+  export const SampleModelScalarFieldEnum: {
     id: 'id',
-    name: 'name',
-    description: 'description',
-    category: 'category',
-    stock: 'stock',
-    price: 'price',
-    domain: 'domain',
-    stack: 'stack',
+    stringField: 'stringField',
+    intField: 'intField',
+    floatField: 'floatField',
+    decimalField: 'decimalField',
+    booleanField: 'booleanField',
+    dateTimeField: 'dateTimeField',
+    jsonField: 'jsonField',
+    bytesField: 'bytesField',
+    enumField: 'enumField',
+    bigIntField: 'bigIntField',
+    textField: 'textField',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    userId: 'userId',
-    imageUrl: 'imageUrl'
+    optionalField: 'optionalField',
+    uniqueField: 'uniqueField',
+    defaultString: 'defaultString',
+    isDeleted: 'isDeleted'
   };
 
-  export type PlantsScalarFieldEnum = (typeof PlantsScalarFieldEnum)[keyof typeof PlantsScalarFieldEnum]
+  export type SampleModelScalarFieldEnum = (typeof SampleModelScalarFieldEnum)[keyof typeof SampleModelScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -2046,12 +2152,28 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+  export const JsonNullValueInput: {
+    JsonNull: typeof JsonNull
+  };
+
+  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
   export const QueryMode: {
     default: 'default',
     insensitive: 'insensitive'
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const JsonNullValueFilter: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull,
+    AnyNull: typeof AnyNull
+  };
+
+  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
   export const NullsOrder: {
@@ -2110,6 +2232,27 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Decimal'
+   */
+  export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
+    
+
+
+  /**
+   * Reference to a field of type 'Decimal[]'
+   */
+  export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -2121,203 +2264,331 @@ export namespace Prisma {
    */
   export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
+
+
+  /**
+   * Reference to a field of type 'Json'
+   */
+  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+  /**
+   * Reference to a field of type 'QueryMode'
+   */
+  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'Bytes'
+   */
+  export type BytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes'>
+    
+
+
+  /**
+   * Reference to a field of type 'Bytes[]'
+   */
+  export type ListBytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Role'
+   */
+  export type EnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role'>
+    
+
+
+  /**
+   * Reference to a field of type 'Role[]'
+   */
+  export type ListEnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'BigInt'
+   */
+  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
+    
+
+
+  /**
+   * Reference to a field of type 'BigInt[]'
+   */
+  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
+    
   /**
    * Deep Input Types
    */
 
 
-  export type PlantsWhereInput = {
-    AND?: PlantsWhereInput | PlantsWhereInput[]
-    OR?: PlantsWhereInput[]
-    NOT?: PlantsWhereInput | PlantsWhereInput[]
-    id?: StringFilter<"Plants"> | string
-    name?: StringFilter<"Plants"> | string
-    description?: StringNullableFilter<"Plants"> | string | null
-    category?: StringFilter<"Plants"> | string
-    stock?: IntFilter<"Plants"> | number
-    price?: FloatFilter<"Plants"> | number
-    domain?: StringFilter<"Plants"> | string
-    stack?: StringFilter<"Plants"> | string
-    createdAt?: DateTimeFilter<"Plants"> | Date | string
-    updatedAt?: DateTimeFilter<"Plants"> | Date | string
-    userId?: StringFilter<"Plants"> | string
-    imageUrl?: StringNullableFilter<"Plants"> | string | null
+  export type SampleModelWhereInput = {
+    AND?: SampleModelWhereInput | SampleModelWhereInput[]
+    OR?: SampleModelWhereInput[]
+    NOT?: SampleModelWhereInput | SampleModelWhereInput[]
+    id?: StringFilter<"SampleModel"> | string
+    stringField?: StringFilter<"SampleModel"> | string
+    intField?: IntFilter<"SampleModel"> | number
+    floatField?: FloatFilter<"SampleModel"> | number
+    decimalField?: DecimalFilter<"SampleModel"> | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolFilter<"SampleModel"> | boolean
+    dateTimeField?: DateTimeFilter<"SampleModel"> | Date | string
+    jsonField?: JsonFilter<"SampleModel">
+    bytesField?: BytesFilter<"SampleModel"> | Uint8Array
+    enumField?: EnumRoleFilter<"SampleModel"> | $Enums.Role
+    bigIntField?: BigIntFilter<"SampleModel"> | bigint | number
+    textField?: StringFilter<"SampleModel"> | string
+    createdAt?: DateTimeFilter<"SampleModel"> | Date | string
+    updatedAt?: DateTimeFilter<"SampleModel"> | Date | string
+    optionalField?: StringNullableFilter<"SampleModel"> | string | null
+    uniqueField?: StringFilter<"SampleModel"> | string
+    defaultString?: StringFilter<"SampleModel"> | string
+    isDeleted?: BoolFilter<"SampleModel"> | boolean
   }
 
-  export type PlantsOrderByWithRelationInput = {
+  export type SampleModelOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrderInput | SortOrder
-    category?: SortOrder
-    stock?: SortOrder
-    price?: SortOrder
-    domain?: SortOrder
-    stack?: SortOrder
+    stringField?: SortOrder
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    booleanField?: SortOrder
+    dateTimeField?: SortOrder
+    jsonField?: SortOrder
+    bytesField?: SortOrder
+    enumField?: SortOrder
+    bigIntField?: SortOrder
+    textField?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
-    imageUrl?: SortOrderInput | SortOrder
+    optionalField?: SortOrderInput | SortOrder
+    uniqueField?: SortOrder
+    defaultString?: SortOrder
+    isDeleted?: SortOrder
   }
 
-  export type PlantsWhereUniqueInput = Prisma.AtLeast<{
+  export type SampleModelWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: PlantsWhereInput | PlantsWhereInput[]
-    OR?: PlantsWhereInput[]
-    NOT?: PlantsWhereInput | PlantsWhereInput[]
-    name?: StringFilter<"Plants"> | string
-    description?: StringNullableFilter<"Plants"> | string | null
-    category?: StringFilter<"Plants"> | string
-    stock?: IntFilter<"Plants"> | number
-    price?: FloatFilter<"Plants"> | number
-    domain?: StringFilter<"Plants"> | string
-    stack?: StringFilter<"Plants"> | string
-    createdAt?: DateTimeFilter<"Plants"> | Date | string
-    updatedAt?: DateTimeFilter<"Plants"> | Date | string
-    userId?: StringFilter<"Plants"> | string
-    imageUrl?: StringNullableFilter<"Plants"> | string | null
-  }, "id">
+    uniqueField?: string
+    AND?: SampleModelWhereInput | SampleModelWhereInput[]
+    OR?: SampleModelWhereInput[]
+    NOT?: SampleModelWhereInput | SampleModelWhereInput[]
+    stringField?: StringFilter<"SampleModel"> | string
+    intField?: IntFilter<"SampleModel"> | number
+    floatField?: FloatFilter<"SampleModel"> | number
+    decimalField?: DecimalFilter<"SampleModel"> | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolFilter<"SampleModel"> | boolean
+    dateTimeField?: DateTimeFilter<"SampleModel"> | Date | string
+    jsonField?: JsonFilter<"SampleModel">
+    bytesField?: BytesFilter<"SampleModel"> | Uint8Array
+    enumField?: EnumRoleFilter<"SampleModel"> | $Enums.Role
+    bigIntField?: BigIntFilter<"SampleModel"> | bigint | number
+    textField?: StringFilter<"SampleModel"> | string
+    createdAt?: DateTimeFilter<"SampleModel"> | Date | string
+    updatedAt?: DateTimeFilter<"SampleModel"> | Date | string
+    optionalField?: StringNullableFilter<"SampleModel"> | string | null
+    defaultString?: StringFilter<"SampleModel"> | string
+    isDeleted?: BoolFilter<"SampleModel"> | boolean
+  }, "id" | "uniqueField">
 
-  export type PlantsOrderByWithAggregationInput = {
+  export type SampleModelOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrderInput | SortOrder
-    category?: SortOrder
-    stock?: SortOrder
-    price?: SortOrder
-    domain?: SortOrder
-    stack?: SortOrder
+    stringField?: SortOrder
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    booleanField?: SortOrder
+    dateTimeField?: SortOrder
+    jsonField?: SortOrder
+    bytesField?: SortOrder
+    enumField?: SortOrder
+    bigIntField?: SortOrder
+    textField?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
-    imageUrl?: SortOrderInput | SortOrder
-    _count?: PlantsCountOrderByAggregateInput
-    _avg?: PlantsAvgOrderByAggregateInput
-    _max?: PlantsMaxOrderByAggregateInput
-    _min?: PlantsMinOrderByAggregateInput
-    _sum?: PlantsSumOrderByAggregateInput
+    optionalField?: SortOrderInput | SortOrder
+    uniqueField?: SortOrder
+    defaultString?: SortOrder
+    isDeleted?: SortOrder
+    _count?: SampleModelCountOrderByAggregateInput
+    _avg?: SampleModelAvgOrderByAggregateInput
+    _max?: SampleModelMaxOrderByAggregateInput
+    _min?: SampleModelMinOrderByAggregateInput
+    _sum?: SampleModelSumOrderByAggregateInput
   }
 
-  export type PlantsScalarWhereWithAggregatesInput = {
-    AND?: PlantsScalarWhereWithAggregatesInput | PlantsScalarWhereWithAggregatesInput[]
-    OR?: PlantsScalarWhereWithAggregatesInput[]
-    NOT?: PlantsScalarWhereWithAggregatesInput | PlantsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Plants"> | string
-    name?: StringWithAggregatesFilter<"Plants"> | string
-    description?: StringNullableWithAggregatesFilter<"Plants"> | string | null
-    category?: StringWithAggregatesFilter<"Plants"> | string
-    stock?: IntWithAggregatesFilter<"Plants"> | number
-    price?: FloatWithAggregatesFilter<"Plants"> | number
-    domain?: StringWithAggregatesFilter<"Plants"> | string
-    stack?: StringWithAggregatesFilter<"Plants"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Plants"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Plants"> | Date | string
-    userId?: StringWithAggregatesFilter<"Plants"> | string
-    imageUrl?: StringNullableWithAggregatesFilter<"Plants"> | string | null
+  export type SampleModelScalarWhereWithAggregatesInput = {
+    AND?: SampleModelScalarWhereWithAggregatesInput | SampleModelScalarWhereWithAggregatesInput[]
+    OR?: SampleModelScalarWhereWithAggregatesInput[]
+    NOT?: SampleModelScalarWhereWithAggregatesInput | SampleModelScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"SampleModel"> | string
+    stringField?: StringWithAggregatesFilter<"SampleModel"> | string
+    intField?: IntWithAggregatesFilter<"SampleModel"> | number
+    floatField?: FloatWithAggregatesFilter<"SampleModel"> | number
+    decimalField?: DecimalWithAggregatesFilter<"SampleModel"> | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolWithAggregatesFilter<"SampleModel"> | boolean
+    dateTimeField?: DateTimeWithAggregatesFilter<"SampleModel"> | Date | string
+    jsonField?: JsonWithAggregatesFilter<"SampleModel">
+    bytesField?: BytesWithAggregatesFilter<"SampleModel"> | Uint8Array
+    enumField?: EnumRoleWithAggregatesFilter<"SampleModel"> | $Enums.Role
+    bigIntField?: BigIntWithAggregatesFilter<"SampleModel"> | bigint | number
+    textField?: StringWithAggregatesFilter<"SampleModel"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"SampleModel"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"SampleModel"> | Date | string
+    optionalField?: StringNullableWithAggregatesFilter<"SampleModel"> | string | null
+    uniqueField?: StringWithAggregatesFilter<"SampleModel"> | string
+    defaultString?: StringWithAggregatesFilter<"SampleModel"> | string
+    isDeleted?: BoolWithAggregatesFilter<"SampleModel"> | boolean
   }
 
-  export type PlantsCreateInput = {
+  export type SampleModelCreateInput = {
     id?: string
-    name: string
-    description?: string | null
-    category: string
-    stock: number
-    price: number
-    domain: string
-    stack: string
+    stringField: string
+    intField: number
+    floatField: number
+    decimalField: Decimal | DecimalJsLike | number | string
+    booleanField: boolean
+    dateTimeField: Date | string
+    jsonField: JsonNullValueInput | InputJsonValue
+    bytesField: Uint8Array
+    enumField: $Enums.Role
+    bigIntField: bigint | number
+    textField: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: string
-    imageUrl?: string | null
+    optionalField?: string | null
+    uniqueField: string
+    defaultString?: string
+    isDeleted?: boolean
   }
 
-  export type PlantsUncheckedCreateInput = {
+  export type SampleModelUncheckedCreateInput = {
     id?: string
-    name: string
-    description?: string | null
-    category: string
-    stock: number
-    price: number
-    domain: string
-    stack: string
+    stringField: string
+    intField: number
+    floatField: number
+    decimalField: Decimal | DecimalJsLike | number | string
+    booleanField: boolean
+    dateTimeField: Date | string
+    jsonField: JsonNullValueInput | InputJsonValue
+    bytesField: Uint8Array
+    enumField: $Enums.Role
+    bigIntField: bigint | number
+    textField: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: string
-    imageUrl?: string | null
+    optionalField?: string | null
+    uniqueField: string
+    defaultString?: string
+    isDeleted?: boolean
   }
 
-  export type PlantsUpdateInput = {
+  export type SampleModelUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    category?: StringFieldUpdateOperationsInput | string
-    stock?: IntFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    domain?: StringFieldUpdateOperationsInput | string
-    stack?: StringFieldUpdateOperationsInput | string
+    stringField?: StringFieldUpdateOperationsInput | string
+    intField?: IntFieldUpdateOperationsInput | number
+    floatField?: FloatFieldUpdateOperationsInput | number
+    decimalField?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolFieldUpdateOperationsInput | boolean
+    dateTimeField?: DateTimeFieldUpdateOperationsInput | Date | string
+    jsonField?: JsonNullValueInput | InputJsonValue
+    bytesField?: BytesFieldUpdateOperationsInput | Uint8Array
+    enumField?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    bigIntField?: BigIntFieldUpdateOperationsInput | bigint | number
+    textField?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    optionalField?: NullableStringFieldUpdateOperationsInput | string | null
+    uniqueField?: StringFieldUpdateOperationsInput | string
+    defaultString?: StringFieldUpdateOperationsInput | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type PlantsUncheckedUpdateInput = {
+  export type SampleModelUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    category?: StringFieldUpdateOperationsInput | string
-    stock?: IntFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    domain?: StringFieldUpdateOperationsInput | string
-    stack?: StringFieldUpdateOperationsInput | string
+    stringField?: StringFieldUpdateOperationsInput | string
+    intField?: IntFieldUpdateOperationsInput | number
+    floatField?: FloatFieldUpdateOperationsInput | number
+    decimalField?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolFieldUpdateOperationsInput | boolean
+    dateTimeField?: DateTimeFieldUpdateOperationsInput | Date | string
+    jsonField?: JsonNullValueInput | InputJsonValue
+    bytesField?: BytesFieldUpdateOperationsInput | Uint8Array
+    enumField?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    bigIntField?: BigIntFieldUpdateOperationsInput | bigint | number
+    textField?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    optionalField?: NullableStringFieldUpdateOperationsInput | string | null
+    uniqueField?: StringFieldUpdateOperationsInput | string
+    defaultString?: StringFieldUpdateOperationsInput | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type PlantsCreateManyInput = {
+  export type SampleModelCreateManyInput = {
     id?: string
-    name: string
-    description?: string | null
-    category: string
-    stock: number
-    price: number
-    domain: string
-    stack: string
+    stringField: string
+    intField: number
+    floatField: number
+    decimalField: Decimal | DecimalJsLike | number | string
+    booleanField: boolean
+    dateTimeField: Date | string
+    jsonField: JsonNullValueInput | InputJsonValue
+    bytesField: Uint8Array
+    enumField: $Enums.Role
+    bigIntField: bigint | number
+    textField: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: string
-    imageUrl?: string | null
+    optionalField?: string | null
+    uniqueField: string
+    defaultString?: string
+    isDeleted?: boolean
   }
 
-  export type PlantsUpdateManyMutationInput = {
+  export type SampleModelUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    category?: StringFieldUpdateOperationsInput | string
-    stock?: IntFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    domain?: StringFieldUpdateOperationsInput | string
-    stack?: StringFieldUpdateOperationsInput | string
+    stringField?: StringFieldUpdateOperationsInput | string
+    intField?: IntFieldUpdateOperationsInput | number
+    floatField?: FloatFieldUpdateOperationsInput | number
+    decimalField?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolFieldUpdateOperationsInput | boolean
+    dateTimeField?: DateTimeFieldUpdateOperationsInput | Date | string
+    jsonField?: JsonNullValueInput | InputJsonValue
+    bytesField?: BytesFieldUpdateOperationsInput | Uint8Array
+    enumField?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    bigIntField?: BigIntFieldUpdateOperationsInput | bigint | number
+    textField?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    optionalField?: NullableStringFieldUpdateOperationsInput | string | null
+    uniqueField?: StringFieldUpdateOperationsInput | string
+    defaultString?: StringFieldUpdateOperationsInput | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type PlantsUncheckedUpdateManyInput = {
+  export type SampleModelUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    category?: StringFieldUpdateOperationsInput | string
-    stock?: IntFieldUpdateOperationsInput | number
-    price?: FloatFieldUpdateOperationsInput | number
-    domain?: StringFieldUpdateOperationsInput | string
-    stack?: StringFieldUpdateOperationsInput | string
+    stringField?: StringFieldUpdateOperationsInput | string
+    intField?: IntFieldUpdateOperationsInput | number
+    floatField?: FloatFieldUpdateOperationsInput | number
+    decimalField?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    booleanField?: BoolFieldUpdateOperationsInput | boolean
+    dateTimeField?: DateTimeFieldUpdateOperationsInput | Date | string
+    jsonField?: JsonNullValueInput | InputJsonValue
+    bytesField?: BytesFieldUpdateOperationsInput | Uint8Array
+    enumField?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    bigIntField?: BigIntFieldUpdateOperationsInput | bigint | number
+    textField?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    optionalField?: NullableStringFieldUpdateOperationsInput | string | null
+    uniqueField?: StringFieldUpdateOperationsInput | string
+    defaultString?: StringFieldUpdateOperationsInput | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2333,21 +2604,6 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2372,6 +2628,22 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type DecimalFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2382,65 +2654,148 @@ export namespace Prisma {
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
+  export type JsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type BytesFilter<$PrismaModel = never> = {
+    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel>
+    in?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    notIn?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    not?: NestedBytesFilter<$PrismaModel> | Uint8Array
+  }
+
+  export type EnumRoleFilter<$PrismaModel = never> = {
+    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
+  }
+
+  export type BigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
 
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
   }
 
-  export type PlantsCountOrderByAggregateInput = {
+  export type SampleModelCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    category?: SortOrder
-    stock?: SortOrder
-    price?: SortOrder
-    domain?: SortOrder
-    stack?: SortOrder
+    stringField?: SortOrder
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    booleanField?: SortOrder
+    dateTimeField?: SortOrder
+    jsonField?: SortOrder
+    bytesField?: SortOrder
+    enumField?: SortOrder
+    bigIntField?: SortOrder
+    textField?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
-    imageUrl?: SortOrder
+    optionalField?: SortOrder
+    uniqueField?: SortOrder
+    defaultString?: SortOrder
+    isDeleted?: SortOrder
   }
 
-  export type PlantsAvgOrderByAggregateInput = {
-    stock?: SortOrder
-    price?: SortOrder
+  export type SampleModelAvgOrderByAggregateInput = {
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    bigIntField?: SortOrder
   }
 
-  export type PlantsMaxOrderByAggregateInput = {
+  export type SampleModelMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    category?: SortOrder
-    stock?: SortOrder
-    price?: SortOrder
-    domain?: SortOrder
-    stack?: SortOrder
+    stringField?: SortOrder
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    booleanField?: SortOrder
+    dateTimeField?: SortOrder
+    bytesField?: SortOrder
+    enumField?: SortOrder
+    bigIntField?: SortOrder
+    textField?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
-    imageUrl?: SortOrder
+    optionalField?: SortOrder
+    uniqueField?: SortOrder
+    defaultString?: SortOrder
+    isDeleted?: SortOrder
   }
 
-  export type PlantsMinOrderByAggregateInput = {
+  export type SampleModelMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    category?: SortOrder
-    stock?: SortOrder
-    price?: SortOrder
-    domain?: SortOrder
-    stack?: SortOrder
+    stringField?: SortOrder
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    booleanField?: SortOrder
+    dateTimeField?: SortOrder
+    bytesField?: SortOrder
+    enumField?: SortOrder
+    bigIntField?: SortOrder
+    textField?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
-    imageUrl?: SortOrder
+    optionalField?: SortOrder
+    uniqueField?: SortOrder
+    defaultString?: SortOrder
+    isDeleted?: SortOrder
   }
 
-  export type PlantsSumOrderByAggregateInput = {
-    stock?: SortOrder
-    price?: SortOrder
+  export type SampleModelSumOrderByAggregateInput = {
+    intField?: SortOrder
+    floatField?: SortOrder
+    decimalField?: SortOrder
+    bigIntField?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2459,24 +2814,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2511,6 +2848,30 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedDecimalFilter<$PrismaModel>
+    _sum?: NestedDecimalFilter<$PrismaModel>
+    _min?: NestedDecimalFilter<$PrismaModel>
+    _max?: NestedDecimalFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2524,13 +2885,89 @@ export namespace Prisma {
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
+  }
+
+  export type BytesWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel>
+    in?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    notIn?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    not?: NestedBytesWithAggregatesFilter<$PrismaModel> | Uint8Array
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBytesFilter<$PrismaModel>
+    _max?: NestedBytesFilter<$PrismaModel>
+  }
+
+  export type EnumRoleWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumRoleFilter<$PrismaModel>
+    _max?: NestedEnumRoleFilter<$PrismaModel>
+  }
+
+  export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -2549,8 +2986,40 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type DecimalFieldUpdateOperationsInput = {
+    set?: Decimal | DecimalJsLike | number | string
+    increment?: Decimal | DecimalJsLike | number | string
+    decrement?: Decimal | DecimalJsLike | number | string
+    multiply?: Decimal | DecimalJsLike | number | string
+    divide?: Decimal | DecimalJsLike | number | string
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
+  }
+
+  export type BytesFieldUpdateOperationsInput = {
+    set?: Uint8Array
+  }
+
+  export type EnumRoleFieldUpdateOperationsInput = {
+    set?: $Enums.Role
+  }
+
+  export type BigIntFieldUpdateOperationsInput = {
+    set?: bigint | number
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -2565,20 +3034,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -2603,6 +3058,22 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type NestedDecimalFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2612,6 +3083,45 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedBytesFilter<$PrismaModel = never> = {
+    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel>
+    in?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    notIn?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    not?: NestedBytesFilter<$PrismaModel> | Uint8Array
+  }
+
+  export type NestedEnumRoleFilter<$PrismaModel = never> = {
+    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
+  }
+
+  export type NestedBigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2629,34 +3139,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2691,6 +3173,30 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedDecimalFilter<$PrismaModel>
+    _sum?: NestedDecimalFilter<$PrismaModel>
+    _min?: NestedDecimalFilter<$PrismaModel>
+    _max?: NestedDecimalFilter<$PrismaModel>
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2703,6 +3209,93 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+  export type NestedJsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedBytesWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Uint8Array | BytesFieldRefInput<$PrismaModel>
+    in?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    notIn?: Uint8Array[] | ListBytesFieldRefInput<$PrismaModel>
+    not?: NestedBytesWithAggregatesFilter<$PrismaModel> | Uint8Array
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBytesFilter<$PrismaModel>
+    _max?: NestedBytesFilter<$PrismaModel>
+  }
+
+  export type NestedEnumRoleWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumRoleFilter<$PrismaModel>
+    _max?: NestedEnumRoleFilter<$PrismaModel>
+  }
+
+  export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
 

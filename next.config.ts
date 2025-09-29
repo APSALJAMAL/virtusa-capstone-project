@@ -1,14 +1,16 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
+    domains: ['lh3.googleusercontent.com'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**', // wildcard for any domain
       },
     ],
-    unoptimized: true, // disable Next.js image optimization
+    dangerouslyAllowSVG: true,
+    unoptimized: true, // disable Next.js image optimization completely
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -19,4 +21,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
