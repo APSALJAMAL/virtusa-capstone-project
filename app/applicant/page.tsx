@@ -22,6 +22,7 @@ import {
   AlertDialogAction,
 } from '@/components/ui/alert-dialog'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 
 /** Shape of Applicant coming from API */
 interface Applicant {
@@ -39,7 +40,7 @@ interface Applicant {
   address: string
   governmentId: string
   reason: string
-  // status: 'PENDING' | 'APPROVED' | 'REJECTED'
+  status: 'PENDING' | 'APPROVED' | 'REJECTED'
   createdAt: string
   updatedAt: string
 }
@@ -68,6 +69,8 @@ export default function Page() {
   const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null)
   const [selectedItem, setSelectedItem] = useState<Applicant | null>(null)
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const fetchData = async () => {
     const res = await fetch('/api/applicant')
@@ -128,6 +131,9 @@ export default function Page() {
 
     setPendingDeleteId(null)
   }
+  const handleRedirect = (id: string) => {
+    router.push(`/applicant/${id}`); // Redirects to /items/[id]
+  };
 
   const handleEdit = (item: Applicant) => {
     setForm({
@@ -262,10 +268,19 @@ export default function Page() {
             <div className="font-bold">{item.fullName}</div>
             <div className="text-sm text-gray-600">ID: {item.id}</div>
             <div className="text-sm">Pass Type: {item.passType}</div>
+            <div className="text-sm">Status : {item.status}</div>
             <div className="space-x-2 flex flex-wrap">
               <Button variant="outline" onClick={() => setSelectedItem(item)}>
                 View
               </Button>
+              {item.status === "APPROVED" && (
+    <Button
+      className=" text-white "
+      onClick={() => handleRedirect(item.id)}
+    >
+      Download
+    </Button>
+  )}
               {/* <Button variant="secondary" onClick={() => handleEdit(item)}>
                 Edit
               </Button> */}

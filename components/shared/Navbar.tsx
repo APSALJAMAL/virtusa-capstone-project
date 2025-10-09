@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { HomeIcon, LogIn, LogOut, Sprout } from "lucide-react";
-
+import { UserCircle2, FileUser, ShieldCheck, Home } from "lucide-react";
 import { stackServerApp } from "@/stack";
 import { UserButton } from "@stackframe/stack";
 import Image from "next/image";
@@ -25,31 +25,34 @@ async function Navbar() {
 
           {/* Navbar Links */}
           <div className="flex flex-wrap items-center gap-3">
-            <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/user">
-                <Sprout className="w-4 h-4" />
-                <span className=" sm:inline">user</span>
-              </Link>
-            </Button>
-            <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/applicant">
-                <Sprout className="w-4 h-4" />
-                <span className=" sm:inline">Applicant</span>
-              </Link>
-            </Button>
-            <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/admin">
-                <Sprout className="w-4 h-4" />
-                <span className=" sm:inline">Admin</span>
-              </Link>
-            </Button>
+          <Button variant="ghost" className="flex items-center gap-2" asChild>
+        <Link href="/">
+          <Home className="w-4 h-4" />
+          <span className="sm:inline">Home</span>
+        </Link>
+      </Button>
+          <Button variant="ghost" className="flex items-center gap-2" asChild>
+        <Link href="/user">
+          <UserCircle2 className="w-4 h-4" />
+          <span className="sm:inline">User</span>
+        </Link>
+      </Button>
 
-            <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/">
-                <HomeIcon className="w-4 h-4" />
-                <span className=" sm:inline">Home</span>
-              </Link>
-            </Button>
+      <Button variant="ghost" className="flex items-center gap-2" asChild>
+        <Link href="/applicant">
+          <FileUser className="w-4 h-4" />
+          <span className="sm:inline">Applicant</span>
+        </Link>
+      </Button>
+
+      <Button variant="ghost" className="flex items-center gap-2" asChild>
+        <Link href="/admin">
+          <ShieldCheck className="w-4 h-4" />
+          <span className="sm:inline">Admin</span>
+        </Link>
+      </Button>
+
+     
 
             <ThemeToggle/>
 
