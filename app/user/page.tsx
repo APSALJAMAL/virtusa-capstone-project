@@ -13,6 +13,7 @@ import {
 
 export default async function UsersPage() {
   const users = await getAllUserDetails();
+  console.log(users);
 
   return (
     <div className="p-6">
