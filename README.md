@@ -1,7 +1,0 @@
-uploadthing
-ai
-razorpay
-vapi
-mail
-call
-token
